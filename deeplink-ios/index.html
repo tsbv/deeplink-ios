@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>DeepLink Exit Intent - Тест</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333333;
+            padding: 20px;
+        }
+        .container {
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #667eea;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .status h2 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        .status p {
+            margin: 8px 0;
+            font-family: 'Courier New', monospace;
+            color: #555555;
+        }
+        .status span {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .instructions {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e3f2fd;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+        }
+        .warning {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff3cd;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DeepLink Exit Intent</h1>
+        <div class="instructions">
+            <strong>Инструкция для тестирования:</strong><br>
+            1. Убедитесь, что вы на iOS устройстве<br>
+            2. Попробуйте переключить вкладку или свернуть Safari<br>
+            3. Проверьте срабатывание редиректа<br>
+            4. Редирект работает только 1 раз за сессию
+        </div>
+        <div class="status">
+            <h2>Статус системы</h2>
+            <p>Устройство: <span id="deviceType">определение...</span></p>
+            <p>iOS: <span id="isIOS">определение...</span></p>
+            <p>Статус редиректа: <span id="redirectStatus">ожидание</span></p>
+        </div>
+        <div class="warning">
+            <strong>⚠️ Настройка:</strong><br>
+            Заменить URL в config.js на вашу реальную ссылку от AppsFlyer OneLink.<br>
+        </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/deeplink-redirect.js"></script>
+</body>
+</html> 
